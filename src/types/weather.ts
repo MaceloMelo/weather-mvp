@@ -18,4 +18,8 @@ export interface CurrentWeatherView {
   humidityPercent: number
   windSpeedMs: number
   pressureHpa: number
+  /** Visibilidade em metros (API `visibility`; 0 se ausente). */
+  visibilityM: number
+  /** Nebulosidade 0–100 (`clouds.all`). */
+  cloudinessPercent: number
 }

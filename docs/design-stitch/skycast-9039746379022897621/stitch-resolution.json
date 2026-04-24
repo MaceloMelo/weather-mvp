@@ -1,0 +1,26 @@
+{
+  "projectId": "9039746379022897621",
+  "projectTitle": "SkyCast Vue Dashboard",
+  "designSystem": {
+    "assetName": "assets/a33859fc5d9c4980bf6c8b72d8478dfc",
+    "displayName": "Atmos",
+    "canvasInstanceId": "assets-a33859fc5d9c4980bf6c8b72d8478dfc-1777001364450",
+    "note": "Design System aparece no Stitch como DESIGN_SYSTEM_INSTANCE (sourceAsset), não como entrada em list_screens. Tokens e tema vêm de list_design_systems + get_project.designTheme."
+  },
+  "referenceScreens": [
+    {
+      "role": "Home canvas (oculto no feed público; mesmo arquivo de thumbnail do projeto em 2026-04-24)",
+      "name": "projects/9039746379022897621/screens/7a73087057444c87914a36c206cec98c",
+      "title": "Previsão do Tempo - Home",
+      "artifacts": ["screen-home-7a730.png"]
+    },
+    {
+      "role": "Home PT-BR (list_screens)",
+      "name": "projects/9039746379022897621/screens/2dd4d51cebd54826b2e87eefa48dd081",
+      "title": "Previsão do Tempo - Home (PT-BR)",
+      "artifacts": ["screen-home-ptbr.png", "screen-home-ptbr.html"]
+    }
+  ],
+  "listScreensCount": 4,
+  "fetchedAt": "2026-04-24"
+}

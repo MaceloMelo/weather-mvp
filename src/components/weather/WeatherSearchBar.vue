@@ -21,35 +21,40 @@ function onSubmit() {
 
 <template>
   <form
-    class="flex w-full max-w-2xl flex-col gap-3 sm:flex-row sm:items-end"
+    class="mx-auto mb-atmos-xl w-full max-w-lg"
     role="search"
     aria-label="Buscar local para previsão do tempo"
     @submit.prevent="onSubmit"
   >
-    <div class="min-w-0 flex-1">
-      <label
-        class="mb-1 block text-left text-sm font-medium text-slate-700"
-        for="weather-search-input"
+    <label
+      class="sr-only"
+      for="weather-search-input"
+    >Buscar cidade ou região</label>
+    <div class="relative">
+      <div
+        class="pointer-events-none absolute inset-y-0 left-5 flex items-center text-white/60"
       >
-        Cidade, estado ou país
-      </label>
+        <span
+          class="material-symbols-outlined text-2xl leading-none"
+          aria-hidden="true"
+        >search</span>
+      </div>
       <input
         id="weather-search-input"
-        class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/30 disabled:cursor-not-allowed disabled:bg-slate-100"
+        class="h-14 w-full rounded-atmos-full border border-white/20 bg-white/[0.15] py-2 pl-14 pr-6 text-atmos-body-md text-white shadow-lg backdrop-blur-3xl transition placeholder:text-white/50 focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-atmos-primary/50 disabled:cursor-not-allowed disabled:opacity-60"
         type="search"
         autocomplete="off"
-        placeholder="Ex.: São Paulo, SP, BR ou Londres, GB"
+        placeholder="Buscar cidade ou região…"
         :disabled="disabled"
         :value="modelValue"
         @input="onInput"
       >
     </div>
-    <button
-      class="inline-flex shrink-0 items-center justify-center rounded-lg bg-sky-600 px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-400"
-      type="submit"
-      :disabled="disabled"
-    >
-      Buscar
-    </button>
+    <p class="mt-atmos-sm text-center text-atmos-body-md text-atmos-onSurfaceVariant/90">
+      Padrão:
+      <span class="font-medium text-atmos-onSurface">Aracaju, Sergipe, BR</span>
+      — ex.:
+      <span class="font-medium text-atmos-onSurface">Curitiba, BR</span>
+    </p>
   </form>
 </template>

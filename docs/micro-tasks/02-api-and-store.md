@@ -18,7 +18,7 @@
 
 - [x] **MT-P1-1:** Tipos `GeoLocation` e `CurrentWeatherView` em `weather-mvp/src/types/weather.ts`.
 - [x] **MT-P1-2:** Serviço `weather-mvp/src/services/openweather.ts` com `searchLocations` e `getCurrentWeather`, tratamento de erro (`parseOpenWeatherError`).
-- [x] **MT-P1-3:** Store Pinia `useWeatherStore` em `weather-mvp/src/stores/weather.ts` (`searchQuery`, `results`, `selected`, `current`, `loading`, `error`, ações `searchByQuery`, `selectLocation`).
+- [x] **MT-P1-3:** Store Pinia `useWeatherStore` em `weather-mvp/src/stores/weather.ts` (`searchQuery` com padrão Aracaju, Sergipe, BR; `noGeocodeMatch`; `selected`; `current`; `loading`; `error`; `searchByQuery` aplica o 1º resultado da geocoding; `selectLocation`).
 - [x] **MT-P1-4:** `.env.example` + orientação de segurança neste documento.
 
 ## Human Gate — decisão humana recomendada
@@ -30,5 +30,5 @@
 ## Critérios de aceite da etapa P1
 
 - Chamadas à API funcionam com `.env` válido.
-- Lista de geocoding e card de tempo atual consistentes com os tipos definidos.
+- Geocoding + card de tempo atual consistentes com os tipos definidos (primeiro resultado da busca vira o local ativo).
 - Mensagens de erro compreensíveis para 401, rede e timeout.

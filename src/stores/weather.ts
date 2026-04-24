@@ -7,16 +7,19 @@ import {
   searchLocations,
 } from '../services/openweather'
 
+/** Texto inicial da busca e fallback de cidade padrão (Aracaju, Sergipe, Brasil). */
+export const DEFAULT_CITY_SEARCH_QUERY = 'Aracaju, Sergipe, BR'
+
 export const useWeatherStore = defineStore('weather', () => {
-  const searchQuery = ref('')
-  const results = ref<GeoLocation[]>([])
+  const searchQuery = ref(DEFAULT_CITY_SEARCH_QUERY)
+  const noGeocodeMatch = ref(false)
   const selected = ref<GeoLocation | null>(null)
   const current = ref<CurrentWeatherView | null>(null)
   const loading = ref(false)
   const error = ref<string | null>(null)
 
   function clearLists() {
-    results.value = []
+    noGeocodeMatch.value = false
     selected.value = null
     current.value = null
   }
@@ -29,16 +32,19 @@ export const useWeatherStore = defineStore('weather', () => {
       return
     }
     loading.value = true
+    noGeocodeMatch.value = false
     try {
       const list = await searchLocations(q)
-      results.value = list
       selected.value = null
       current.value = null
       if (list.length === 0) {
+        noGeocodeMatch.value = true
         error.value = null
+        return
       }
+      await selectLocation(list[0])
     } catch (e) {
-      results.value = []
+      noGeocodeMatch.value = false
       selected.value = null
       current.value = null
       error.value = parseOpenWeatherError(e)
@@ -63,7 +69,7 @@ export const useWeatherStore = defineStore('weather', () => {
 
   return {
     searchQuery,
-    results,
+    noGeocodeMatch,
     selected,
     current,
     loading,

@@ -4,7 +4,7 @@
 
 ## Checklist de execução
 
-- [x] **MT-P3-1:** Estados de UI: `loading`, mensagem de erro (`role="alert"`), “nenhum resultado” quando a busca retorna lista vazia.
+- [x] **MT-P3-1:** Estados de UI: `loading`, mensagem de erro (`role="alert"`), “nenhum resultado” quando a geocoding não retorna locais (`noGeocodeMatch`).
 - [x] **MT-P3-2:** ESLint (flat config) + script `npm run lint` em `weather-mvp`.
 - [x] **MT-P3-3:** README na raiz do repositório (`projeto-curso/README.md`) apontando para `weather-mvp` e para `docs/`.
 - [x] **MT-P3-4:** README do app (`weather-mvp/README.md`) com scripts e aviso de segurança da chave.
@@ -17,4 +17,4 @@
 
 ## Referência à US / objetivo do MVP
 
-**Objetivo:** página web para pesquisar por cidade, estado ou país, listar resultados da API e mostrar como está o tempo no local selecionado — com stack Vue 3, Tailwind, Pinia e axios, conforme plano aprovado.
+**Objetivo:** página web para pesquisar por cidade, estado ou país; o primeiro resultado da geocoding define o local ativo; exibir o tempo atual nesse local — stack Vue 3, Tailwind, Pinia e axios, conforme plano aprovado.

@@ -33,6 +33,8 @@ interface OwmCurrentResponse {
     pressure?: number
   }
   wind?: { speed?: number }
+  visibility?: number
+  clouds?: { all?: number }
 }
 
 export function mapCurrentToView(
@@ -47,6 +49,8 @@ export function mapCurrentToView(
     labelParts.push(location.state)
   }
   labelParts.push(location.country)
+  const clouds = data.clouds || {}
+  const visibilityRaw = data.visibility
   return {
     locationLabel: labelParts.join(', '),
     countryCode: location.country,
@@ -57,6 +61,8 @@ export function mapCurrentToView(
     humidityPercent: Number(main.humidity ?? 0),
     windSpeedMs: Number(wind.speed ?? 0),
     pressureHpa: Number(main.pressure ?? 0),
+    visibilityM: Number(visibilityRaw ?? 0),
+    cloudinessPercent: Number(clouds.all ?? 0),
   }
 }
 

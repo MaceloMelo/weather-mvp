@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#ffddb8",
+            "outline-variant": "#3e484f",
+            "on-secondary-fixed-variant": "#683c00",
+            "on-background": "#dae2fd",
+            "background": "#0b1326",
+            "secondary-fixed-dim": "#fcb973",
+            "on-surface": "#dae2fd",
+            "surface-bright": "#31394d",
+            "on-primary": "#00354a",
+            "surface-container-lowest": "#060e20",
+            "surface-tint": "#7bd0ff",
+            "on-primary-container": "#004965",
+            "primary": "#8ed5ff",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-container": "#171f33",
+            "surface": "#0b1326",
+            "surface-variant": "#2d3449",
+            "primary-container": "#38bdf8",
+            "on-surface-variant": "#bdc8d1",
+            "on-error": "#690005",
+            "tertiary-container": "#f1a02b",
+            "inverse-on-surface": "#283044",
+            "on-secondary-container": "#ecab67",
+            "secondary-container": "#6c3e00",
+            "inverse-primary": "#00668a",
+            "tertiary-fixed-dim": "#ffb960",
+            "surface-container-high": "#222a3d",
+            "error": "#ffb4ab",
+            "on-primary-fixed-variant": "#004c69",
+            "on-primary-fixed": "#001e2c",
+            "tertiary": "#ffc176",
+            "surface-container-low": "#131b2e",
+            "on-tertiary": "#472a00",
+            "primary-fixed": "#c4e7ff",
+            "on-tertiary-container": "#613b00",
+            "surface-container-highest": "#2d3449",
+            "primary-fixed-dim": "#7bd0ff",
+            "secondary": "#fcb973",
+            "on-tertiary-fixed-variant": "#653e00",
+            "outline": "#87929a",
+            "secondary-fixed": "#ffdcbd",
+            "on-error-container": "#ffdad6",
+            "error-container": "#93000a",
+            "inverse-surface": "#dae2fd",
+            "on-secondary": "#492900",
+            "surface-dim": "#0b1326",
+            "on-secondary-fixed": "#2c1600"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sm": "8px",
+            "xl": "48px",
+            "gutter": "16px",
+            "xs": "4px",
+            "unit": "4px",
+            "container-margin": "24px",
+            "md": "16px",
+            "lg": "24px"
+          },
+          "fontFamily": {
+            "headline-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-caps": ["Inter"],
+            "body-md": ["Inter"],
+            "display-temp": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "display-temp": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .wet-icon {
+      filter: drop-shadow(0 0 8px rgba(123, 208, 255, 0.5));
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Full-screen dynamic background -->
+<div class="fixed inset-0 z-0 overflow-hidden">
+<img class="w-full h-full object-cover scale-110" data-alt="Stunning dusk landscape with deep orange and purple sunset sky fading into clear dark blue night with soft clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWmbYxp3S1wABBzcB5c0XPsE8D0zjiBuWTSoisMfpXPy2E8eTMTE2dCNlEtRrPAhWL3JTXjj14YYLgLNDZGhuA5hIPxMiYSnpXJHyjTbtNYuV6RP-fZcoag915nKLPdyaA1SZVhUZlxFLLWxcIUgBnexeWCEVlVvJeCCSVIzygU7TNyLlJT2UL8xTvnCr3R2rhm5Dk-ojiGnd9d9z21Mn1F2HFiFrX0_7aonUwwrSm2ZpYn1VLNx9cYfSRwKhSZyUq0TXEjSpvZNE"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-background/80"></div>
+</div>
+<!-- Navigation Shell (TopAppBar) -->
+<header class="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-white/10 dark:bg-slate-900/20 backdrop-blur-xl">
+<div class="flex items-center justify-between px-6 h-20 w-full max-w-7xl mx-auto font-inter tracking-tight antialiased">
+<div class="text-2xl font-bold text-white dark:text-slate-100">Atmos</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sky-400 font-semibold transition-all duration-300" href="#">Início</a>
+<a class="text-white/70 dark:text-slate-400 hover:text-white transition-all duration-300" href="#">Previsão</a>
+<a class="text-white/70 dark:text-slate-400 hover:text-white transition-all duration-300" href="#">Radar</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-white/10 transition-all duration-300 active:scale-95 text-white">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</button>
+<button class="p-2 rounded-full hover:bg-white/10 transition-all duration-300 active:scale-95 text-white">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-10 pt-32 pb-40 min-h-screen px-container-margin max-w-7xl mx-auto flex flex-col items-center">
+<!-- Central Search Bar -->
+<div class="w-full max-w-lg mb-xl animate-in fade-in slide-in-from-top-4 duration-700">
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none text-white/60">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full h-14 pl-14 pr-6 rounded-full bg-white/15 backdrop-blur-3xl border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-white/20 transition-all duration-300 shadow-lg" placeholder="Buscar cidade..." type="text"/>
+</div>
+</div>
+<!-- Hero Section: Current Weather -->
+<section class="text-center mb-xl">
+<h1 class="font-headline-lg text-headline-lg text-white mb-2 tracking-tight">San Francisco</h1>
+<p class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-6">Céu Limpo • Crepúsculo</p>
+<div class="flex items-center justify-center gap-6">
+<div class="font-display-temp text-display-temp text-white drop-shadow-2xl">
+          68<span class="text-primary-container">°</span>
+</div>
+<div class="flex flex-col items-start gap-1">
+<span class="material-symbols-outlined text-6xl text-secondary wet-icon" data-icon="wb_twilight" style="font-variation-settings: 'FILL' 1;">wb_twilight</span>
+</div>
+</div>
+</section>
+<!-- Weather Details: Bento Grid -->
+<section class="w-full grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
+<div class="glass-card rounded-[32px] p-lg flex flex-col items-center text-center group hover:bg-white/20 transition-all duration-500">
+<span class="material-symbols-outlined text-primary mb-sm text-3xl" data-icon="humidity_percentage">humidity_percentage</span>
+<span class="font-label-caps text-label-caps text-white/50 uppercase mb-xs">Umidade</span>
+<span class="font-headline-md text-headline-md text-white">42%</span>
+</div>
+<div class="glass-card rounded-[32px] p-lg flex flex-col items-center text-center group hover:bg-white/20 transition-all duration-500">
+<span class="material-symbols-outlined text-secondary mb-sm text-3xl" data-icon="air">air</span>
+<span class="font-label-caps text-label-caps text-white/50 uppercase mb-xs">Velocidade do Vento</span>
+<span class="font-headline-md text-headline-md text-white">12 mph</span>
+</div>
+<div class="glass-card rounded-[32px] p-lg flex flex-col items-center text-center group hover:bg-white/20 transition-all duration-500">
+<span class="material-symbols-outlined text-tertiary mb-sm text-3xl" data-icon="wb_sunny">wb_sunny</span>
+<span class="font-label-caps text-label-caps text-white/50 uppercase mb-xs">Índice UV</span>
+<span class="font-headline-md text-headline-md text-white">Baixo 2</span>
+</div>
+</section>
+<!-- Secondary Data Row -->
+<section class="w-full mb-xl">
+<div class="glass-card rounded-[32px] p-lg overflow-hidden relative">
+<div class="flex flex-col md:flex-row justify-between items-center gap-lg">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="visibility">visibility</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-white/50 uppercase">Visibilidade</p>
+<p class="font-body-lg text-body-lg text-white font-semibold">10 Milhas</p>
+</div>
+</div>
+<div class="h-px w-full md:w-px md:h-12 bg-white/10"></div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-2xl bg-secondary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="thermostat">thermostat</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-white/50 uppercase">Sensação Térmica</p>
+<p class="font-body-lg text-body-lg text-white font-semibold">66°</p>
+</div>
+</div>
+<div class="h-px w-full md:w-px md:h-12 bg-white/10"></div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-2xl bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="compress">compress</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-white/50 uppercase">Pressão</p>
+<p class="font-body-lg text-body-lg text-white font-semibold">29.92 in</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5-Day Forecast -->
+<section class="w-full">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-headline-md text-headline-md text-white">Previsão para 5 Dias</h2>
+<button class="text-primary font-label-caps text-label-caps flex items-center gap-xs hover:gap-sm transition-all">
+          VER DETALHES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-md overflow-x-auto pb-4 no-scrollbar">
+<!-- Day 1 -->
+<div class="glass-card min-w-[140px] flex-1 rounded-3xl p-md flex flex-col items-center gap-sm">
+<span class="font-label-caps text-label-caps text-white/60">TER</span>
+<span class="material-symbols-outlined text-primary text-3xl wet-icon" data-icon="partly_cloudy_day">partly_cloudy_day</span>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-white">72°</span>
+<span class="font-body-md text-body-md text-white/40">58°</span>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="glass-card min-w-[140px] flex-1 rounded-3xl p-md flex flex-col items-center gap-sm">
+<span class="font-label-caps text-label-caps text-white/60">QUA</span>
+<span class="material-symbols-outlined text-secondary text-3xl wet-icon" data-icon="sunny">sunny</span>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-white">75°</span>
+<span class="font-body-md text-body-md text-white/40">60°</span>
+</div>
+</div>
+<!-- Day 3 -->
+<div class="glass-card min-w-[140px] flex-1 rounded-3xl p-md flex flex-col items-center gap-sm">
+<span class="font-label-caps text-label-caps text-white/60 text-primary">QUI</span>
+<span class="material-symbols-outlined text-primary text-3xl wet-icon" data-icon="cloud">cloud</span>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-white">68°</span>
+<span class="font-body-md text-body-md text-white/40">56°</span>
+</div>
+</div>
+<!-- Day 4 -->
+<div class="glass-card min-w-[140px] flex-1 rounded-3xl p-md flex flex-col items-center gap-sm">
+<span class="font-label-caps text-label-caps text-white/60">SEX</span>
+<span class="material-symbols-outlined text-primary-container text-3xl wet-icon" data-icon="rainy">rainy</span>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-white">64°</span>
+<span class="font-body-md text-body-md text-white/40">54°</span>
+</div>
+</div>
+<!-- Day 5 -->
+<div class="glass-card min-w-[140px] flex-1 rounded-3xl p-md flex flex-col items-center gap-sm">
+<span class="font-label-caps text-label-caps text-white/60">SÁB</span>
+<span class="material-symbols-outlined text-tertiary text-3xl wet-icon" data-icon="partly_cloudy_day">partly_cloudy_day</span>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-white">70°</span>
+<span class="font-body-md text-body-md text-white/40">57°</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-[32px] bg-white/10 dark:bg-black/20 backdrop-blur-2xl border-t border-white/20">
+<div class="flex justify-around items-center px-8 pb-6 pt-3 h-24">
+<a class="flex flex-col items-center justify-center bg-white/20 dark:bg-sky-500/20 text-white dark:text-sky-300 rounded-full p-3 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="cloud">cloud</span>
+<span class="font-inter text-[11px] font-medium uppercase tracking-widest mt-1">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/50 dark:text-slate-500 p-3 hover:text-white dark:hover:text-sky-200 transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-inter text-[11px] font-medium uppercase tracking-widest mt-1">Previsão</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/50 dark:text-slate-500 p-3 hover:text-white dark:hover:text-sky-200 transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-inter text-[11px] font-medium uppercase tracking-widest mt-1">Radar</span>
+</a>
+</div>
+</nav>
+</body></html>

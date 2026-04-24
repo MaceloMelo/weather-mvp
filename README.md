@@ -28,9 +28,11 @@ MVP de previsão do tempo com **Vue 3**, **Vite**, **TypeScript**, **Tailwind CS
 
 ## Documentação do projeto
 
-- Micro-tarefas: [`docs/micro-tasks`](docs/micro-tasks)
+- Micro-tarefas: [`docs/micro-tasks`](docs/micro-tasks) (inclui Stitch/Atmos em `05-stitch-design-system.md` e layout Home PT-BR em `06-stitch-home-layout-ptbr.md`)
 - Prompt de início: [`docs/prompts/prompt-start.md`](docs/prompts/prompt-start.md)
 - Contratos de componentes: [`docs/contracts/README.md`](docs/contracts/README.md)
+- Design system (Stitch — SkyCast / Atmos): artefatos e manifest em [`docs/design-stitch/skycast-9039746379022897621`](docs/design-stitch/skycast-9039746379022897621); tokens consumidos pelo Tailwind a partir de `atmos-design-tokens.json`
+- Primitivos de UI (DS): [`docs/contracts/ds-primitives.md`](docs/contracts/ds-primitives.md)
 
 ## Segurança (MVP)
 
@@ -85,7 +87,7 @@ Referência de processo: [`docs/prompts/prompt-start.md`](docs/prompts/prompt-st
 | **Stack e base** | Scaffold Vite + Vue 3 + TypeScript, Tailwind, Pinia, axios e cliente HTTP com timeout, conforme checklists P0. |
 | **Domínio e API** | Tipos (`GeoLocation`, `CurrentWeatherView`), serviço OpenWeather (geocoding + tempo atual), tratamento de erros e variável `VITE_OPENWEATHER_API_KEY` documentada em `.env.example`. |
 | **Estado** | Store Pinia `useWeatherStore` alinhada aos contratos em `docs/contracts/README.md`. |
-| **UI e acessibilidade** | Componentes `WeatherSearchBar`, `LocationResultsList`, `WeatherCurrentCard`, orquestração em `HomeView`, estados de loading/erro/vazio. |
+| **UI e acessibilidade** | Componentes `WeatherSearchBar`, blocos Stitch (`WeatherHeroSection`, métricas), orquestração em `HomeView`, estados de loading/erro/vazio; primeiro resultado da geocoding aplicado automaticamente. |
 | **Documentação** | Contratos em tabelas, orientações de query `q`, human gates nas microtarefas de API e UI. |
 | **Qualidade** | Apoio a ESLint, scripts `lint`/`build`, README na raiz do repositório apontando para `weather-mvp` e `docs/`. |
 
@@ -103,8 +105,8 @@ Alguns pontos ficam **fora da automação segura** ou exigem **validação de pr
 | **Plano gratuito e termos OpenWeather** | Cotas, uso comercial e limites dependem da conta e do contrato; não cabe à IA “aprovar” escala de tráfego. |
 | **Escopo de endpoints** | MVP limitado a **tempo atual**; incluir previsão horária/diária é mudança de escopo. |
 | **Idioma e UX** | Confirmação de **pt-BR** na UI e `lang=pt_br` na API; textos de produto e tom. |
-| **Formato de busca** | Convenção `Cidade, UF, BR` e como tratar ambiguidade na lista — alinhamento com expectativa do usuário final. |
-| **`limit` da geocoding** | Valor fixo (ex.: 8 resultados) versus paginação — decisão de produto. |
+| **Formato de busca** | Convenção `Cidade, UF, BR`; ambiguidade usa o **primeiro** retorno da API (sem lista na UI) — alinhamento com expectativa do usuário final. |
+| **`limit` da geocoding** | Valor fixo (ex.: 8 resultados); apenas o primeiro é usado na UI atual — paginação ou escolha explícita seria mudança de produto. |
 | **Revisão de prompts e plano** | Critérios do `prompt-start.md` pedem **revisão humana** em decisões importantes (stack, segurança, escopo). |
 
 Detalhamento adicional: seções **Human Gate** em `docs/micro-tasks/02-api-and-store.md` e `docs/micro-tasks/03-ui-components.md`.
@@ -116,3 +118,5 @@ Detalhamento adicional: seções **Human Gate** em `docs/micro-tasks/02-api-and-
 - [x] Incluir **Conventional Commits**, **papel da IA** e **decisões humanas** neste README (fonte principal para governança do MVP).
 - [x] Corrigir links da documentação para a pasta `docs/` dentro de `weather-mvp`.
 - **US / rastreio:** solicitação em chat para que o README atualizado seja o `weather-mvp/README.md` (em vez de concentrar só em `docs/contracts/README.md`).
+- [x] Integração **Stitch / Atmos** (SkyCast): artefatos em `docs/design-stitch/`, tokens no Tailwind, primitivos `DsGlassCard` / `DsButton`, UI de tempo migrada; micro-tarefas `05-stitch-design-system.md` e prompt `docs/prompts/prompt-2026-04-24-stitch-design-system.md`.
+- [x] **US (chat):** cidade padrão **Aracaju, Sergipe, BR** na store e busca ao abrir a Home; geocoding usa sempre o **primeiro** resultado (sem lista “Resultados”); `LocationResultsList` removido; docs `02`–`04`, `contracts` e este README alinhados.
