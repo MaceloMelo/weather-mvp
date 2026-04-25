@@ -28,7 +28,7 @@ MVP de previsão do tempo com **Vue 3**, **Vite**, **TypeScript**, **Tailwind CS
 
 ## Documentação do projeto
 
-- Micro-tarefas: [`docs/micro-tasks`](docs/micro-tasks) (inclui Stitch/Atmos em `05-stitch-design-system.md` e layout Home PT-BR em `06-stitch-home-layout-ptbr.md`)
+- Micro-tarefas: [`docs/micro-tasks`](docs/micro-tasks) (inclui Stitch/Atmos em `05-stitch-design-system.md`, layout Home PT-BR em `06-stitch-home-layout-ptbr.md`, fundo por condição meteorológica em `07-weather-ambient-backgrounds.md`)
 - Prompt de início: [`docs/prompts/prompt-start.md`](docs/prompts/prompt-start.md)
 - Contratos de componentes: [`docs/contracts/README.md`](docs/contracts/README.md)
 - Design system (Stitch — SkyCast / Atmos): artefatos e manifest em [`docs/design-stitch/skycast-9039746379022897621`](docs/design-stitch/skycast-9039746379022897621); tokens consumidos pelo Tailwind a partir de `atmos-design-tokens.json`
@@ -120,3 +120,4 @@ Detalhamento adicional: seções **Human Gate** em `docs/micro-tasks/02-api-and-
 - **US / rastreio:** solicitação em chat para que o README atualizado seja o `weather-mvp/README.md` (em vez de concentrar só em `docs/contracts/README.md`).
 - [x] Integração **Stitch / Atmos** (SkyCast): artefatos em `docs/design-stitch/`, tokens no Tailwind, primitivos `DsGlassCard` / `DsButton`, UI de tempo migrada; micro-tarefas `05-stitch-design-system.md` e prompt `docs/prompts/prompt-2026-04-24-stitch-design-system.md`.
 - [x] **US (chat):** cidade padrão **Aracaju, Sergipe, BR** na store e busca ao abrir a Home; geocoding usa sempre o **primeiro** resultado (sem lista “Resultados”); `LocationResultsList` removido; docs `02`–`04`, `contracts` e este README alinhados.
+- [x] **US (chat — 2026-04-24):** fundo da Home varia com o tempo (**padrão / sol / nublado / chuva**) conforme Stitch (`node-id` documentados em `docs/micro-tasks/07-weather-ambient-backgrounds.md`); layout do conteúdo inalterado; prompt em `docs/prompts/prompt-2026-04-24-stitch-weather-ambient.md`.

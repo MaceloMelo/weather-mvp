@@ -18,6 +18,17 @@
 
 Os URLs Google/FIFE podem expirar; para recapturar, use o MCP Stitch (`get_project`, `list_screens`, `get_screen`) e `curl -L` com as novas `downloadUrl`.
 
+## Variantes de ambiente (fundo) — IDs de tela Stitch
+
+Usadas no MVP para **somente a camada de fundo** da Home (`DsAmbientBackground.variant`), com gradientes Atmos no app até decisão de assets exportados.
+
+| Variante | Screen id (Stitch) |
+|----------|---------------------|
+| Padrão (PT-BR home) | `2dd4d51cebd54826b2e87eefa48dd081` |
+| Chuvoso | `a7785b4d87084791b47daeffb8a54eb0` |
+| Sol | `a801c5c10420495db951b40f9880e321` |
+| Nublado | `77efa311e8ad40e7b8f55d30cf2ab2ff` |
+
 ## Design System “tela” no Stitch
 
 O stub `asset-stub-assets-…` do enunciado corresponde à instância de canvas `assets-a33859fc5d9c4980bf6c8b72d8478dfc-1777001364450` em `get_project.screenInstances` (`type: DESIGN_SYSTEM_INSTANCE`). Não há linha dedicada “Design System” em `list_screens`; a fonte normativa de tokens é `list_design_systems` + `designTheme` do projeto.

@@ -1,3 +1,6 @@
+/** Variante de fundo ambiente (Stitch: padrão / chuva / sol / nublado). */
+export type AmbientWeatherKind = 'default' | 'rainy' | 'sunny' | 'cloudy'
+
 /** Resposta do endpoint Geocoding 1.0 (trecho usado na UI). */
 export interface GeoLocation {
   name: string
@@ -22,4 +25,6 @@ export interface CurrentWeatherView {
   visibilityM: number
   /** Nebulosidade 0–100 (`clouds.all`). */
   cloudinessPercent: number
+  /** Pano de fundo da Home alinhado à condição meteorológica (somente camada ambiente). */
+  ambientKind: AmbientWeatherKind
 }

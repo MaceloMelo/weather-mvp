@@ -25,7 +25,7 @@ onMounted(() => {
 
 <template>
   <div class="relative min-h-screen overflow-x-hidden text-atmos-onBackground">
-    <DsAmbientBackground />
+    <DsAmbientBackground :variant="current?.ambientKind ?? 'default'" />
 
     <DsTopAppBar brand="Atmos">
       <template #nav>

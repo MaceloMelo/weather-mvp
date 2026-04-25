@@ -1,4 +1,5 @@
 import { http } from './http'
+import { ambientKindFromOwm } from '../lib/weatherAmbient'
 import type { CurrentWeatherView, GeoLocation } from '../types/weather'
 
 const GEO_BASE = 'https://api.openweathermap.org/geo/1.0/direct'
@@ -25,7 +26,7 @@ export function mapGeoToLocation(raw: Record<string, unknown>): GeoLocation {
 }
 
 interface OwmCurrentResponse {
-  weather?: Array<{ description?: string; icon?: string }>
+  weather?: Array<{ id?: number; description?: string; icon?: string }>
   main?: {
     temp?: number
     feels_like?: number
@@ -42,6 +43,8 @@ export function mapCurrentToView(
   location: GeoLocation,
 ): CurrentWeatherView {
   const w0 = data.weather && data.weather[0]
+  const weatherId = w0?.id
+  const iconCode = String(w0?.icon ?? '01d')
   const main = data.main || {}
   const wind = data.wind || {}
   const labelParts = [location.name]
@@ -57,12 +60,13 @@ export function mapCurrentToView(
     temperatureC: Number(main.temp ?? 0),
     feelsLikeC: Number(main.feels_like ?? main.temp ?? 0),
     description: String(w0?.description ?? ''),
-    iconCode: String(w0?.icon ?? '01d'),
+    iconCode,
     humidityPercent: Number(main.humidity ?? 0),
     windSpeedMs: Number(wind.speed ?? 0),
     pressureHpa: Number(main.pressure ?? 0),
     visibilityM: Number(visibilityRaw ?? 0),
     cloudinessPercent: Number(clouds.all ?? 0),
+    ambientKind: ambientKindFromOwm(weatherId, iconCode),
   }
 }
 

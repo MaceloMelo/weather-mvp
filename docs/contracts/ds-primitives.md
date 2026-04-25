@@ -29,8 +29,9 @@
 |---------|------|----------------|-----------|
 | Prop | `imageUrl` | `string` (opcional, default `''`) | Se preenchido, exibe `<img>` em tela cheia sob o gradiente Atmos (ex.: arquivo em `public/`). |
 | Prop | `alt` | `string` (opcional) | Texto alternativo da imagem. |
+| Prop | `variant` | `'default' \| 'rainy' \| 'sunny' \| 'cloudy'` (opcional, default `'default'`) | Gradiente de fundo alinhado à condição meteorológica; **não altera** o layout do conteúdo. Ver `AmbientWeatherKind` em `src/types/weather.ts` e [`../micro-tasks/07-weather-ambient-backgrounds.md`](../micro-tasks/07-weather-ambient-backgrounds.md). |
 
-**Markup:** `aria-hidden="true"` na raiz (decorativo); camadas: `bg-atmos-shell` fixo, imagem opcional, gradiente inferior.
+**Markup:** `aria-hidden="true"` na raiz (decorativo); camadas: gradiente fixo (`bg-atmos-shell` ou `bg-atmos-shell-{sunny,cloudy,rainy}`), imagem opcional, gradiente inferior.
 
 ## DsTopAppBar
 

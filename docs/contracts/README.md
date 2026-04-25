@@ -57,7 +57,7 @@
 
 **@deprecated** para a Home Stitch PT-BR: preferir `WeatherHeroSection` + `WeatherBentoMetrics` + `WeatherSecondaryMetricsRow`.
 
-**Tipo `CurrentWeatherView`:** ver `weather-mvp/src/types/weather.ts` (inclui `visibilityM`, `cloudinessPercent`).
+**Tipo `CurrentWeatherView`:** ver `weather-mvp/src/types/weather.ts` (inclui `visibilityM`, `cloudinessPercent`, `ambientKind` para o fundo ambiente da Home).
 
 ## Store `useWeatherStore`
 

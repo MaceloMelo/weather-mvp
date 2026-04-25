@@ -62,8 +62,18 @@ export default {
         'atmos-full': atmosRounded.full,
       },
       backgroundImage: {
+        /** Padrão — alinhado à tela Stitch `2dd4d51cebd54826b2e87eefa48dd081` (gradiente escuro + brilho ciano). */
         'atmos-shell':
           'radial-gradient(120% 80% at 50% 0%, rgb(56 189 248 / 0.14) 0%, transparent 55%), linear-gradient(180deg, rgb(6 14 32) 0%, rgb(11 19 38) 45%, rgb(23 31 51) 100%)',
+        /** Sol — referência Stitch `a801c5c10420495db951b40f9880e321` (topo mais luminoso, acento quente). */
+        'atmos-shell-sunny':
+          'radial-gradient(100% 70% at 50% -10%, rgb(142 213 255 / 0.38) 0%, transparent 52%), radial-gradient(85% 55% at 85% 15%, rgb(252 185 115 / 0.14) 0%, transparent 48%), linear-gradient(180deg, rgb(8 28 48) 0%, rgb(12 42 68) 42%, rgb(18 48 78) 100%)',
+        /** Nublado — referência Stitch `77efa311e8ad40e7b8f55d30cf2ab2ff` (céu acinzentado, menos saturação). */
+        'atmos-shell-cloudy':
+          'radial-gradient(120% 85% at 50% 5%, rgb(189 200 209 / 0.14) 0%, transparent 58%), linear-gradient(180deg, rgb(10 14 24) 0%, rgb(18 22 36) 48%, rgb(32 40 56) 100%)',
+        /** Chuva — referência Stitch `a7785b4d87084791b47daeffb8a54eb0` (mais escuro, brilho frio lateral). */
+        'atmos-shell-rainy':
+          'radial-gradient(95% 55% at 25% 0%, rgb(56 130 180 / 0.22) 0%, transparent 55%), linear-gradient(180deg, rgb(5 10 22) 0%, rgb(8 14 28) 52%, rgb(14 22 40) 100%)',
       },
     },
   },
