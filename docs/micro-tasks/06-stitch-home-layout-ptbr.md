@@ -25,6 +25,16 @@
 - [x] **MT-LAYOUT-10:** `HomeView.vue` recomposto (ordem Stitch, lista de resultados, estados).
 - [x] **MT-LAYOUT-11:** Contratos em `docs/contracts/README.md` e `docs/contracts/ds-primitives.md`.
 - [x] **MT-LAYOUT-12:** `npm run lint` e `npm run build` sem erros.
+- [x] **MT-LAYOUT-13 (US — Home Stitch PT-BR):** Removidos menus de navegação do header na `HomeView`, mantendo apenas a marca no `DsTopAppBar`.
+
+## Registro de atividades realizadas
+
+- [x] **US referenciada:** alteração vinculada à US de layout Home Stitch PT-BR desta etapa (`9039746379022897621` / `2dd4d51cebd54826b2e87eefa48dd081`).
+- [x] `tests/components/home-view.spec.ts`: adicionado teste de contrato para ausência de labels de menu no header.
+- [x] `src/views/HomeView.vue`: removido slot `nav` com botões `Início`, `Previsão` e `Radar`.
+- [x] Testes focados executados com sucesso (`home-view.spec.ts` e `weather-components.spec.ts`).
+- [x] `README.md`: documentada evolução da navegação inferior (`Início`, `Previsão`, `Radar`) como melhoria futura e seu papel no contexto meteorológico.
+- [x] `README.md`: estrutura reorganizada para melhorar clareza (visão geral, navegação inferior, setup rápido, estado atual, roadmap, documentação e governança).
 
 ## Resultado esperado
 

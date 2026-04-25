@@ -93,4 +93,12 @@ describe('HomeView', () => {
     expect(wrapper.find('[data-testid="secondary"]').exists()).toBe(true)
     expect(wrapper.find('[data-testid="forecast"]').exists()).toBe(true)
   })
+
+  it('does not render header menu labels', () => {
+    const wrapper = mountHomeView()
+
+    expect(wrapper.text()).not.toContain('Início')
+    expect(wrapper.text()).not.toContain('Previsão')
+    expect(wrapper.text()).not.toContain('Radar')
+  })
 })

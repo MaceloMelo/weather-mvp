@@ -10,6 +10,13 @@
 - [x] **MT-P2-4:** `HomeView` orquestra barra de busca, blocos de tempo atual e estados (`loading`, erro, vazio).
 - [x] **MT-P2-5:** Documentação de contratos em `docs/contracts/README.md` (tabela resumo).
 - [x] **MT-P2-6 (US — cidade padrão + 1º resultado):** Removida lista de resultados da Home; busca ao montar (`onMounted`) com padrão Aracaju; hint no `WeatherSearchBar` alinhado ao padrão; mensagem de vazio usa `noGeocodeMatch` (componente `LocationResultsList` removido do fluxo).
+- [x] **MT-P2-7 (US — cidade padrão + 1º resultado):** Removido hint textual de exemplo (`Padrão: Aracaju... / ex.: Curitiba...`) do `WeatherSearchBar` para simplificar a UI.
+
+## Registro de atividades realizadas
+
+- [x] **US referenciada:** MT vinculada à **US — cidade padrão + 1º resultado** desta etapa P2.
+- [x] `src/components/weather/WeatherSearchBar.vue`: removido bloco `<p>` de apoio com exemplos de busca.
+- [x] Testes revisados em `tests/components/weather-components.spec.ts` e `tests/components/home-view.spec.ts` (sem ajustes necessários).
 
 ## Human Gate — UX / idioma
 

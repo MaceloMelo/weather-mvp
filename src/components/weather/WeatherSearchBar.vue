@@ -50,11 +50,5 @@ function onSubmit() {
         @input="onInput"
       >
     </div>
-    <p class="mt-atmos-sm text-center text-atmos-body-md text-atmos-onSurfaceVariant/90">
-      Padrão:
-      <span class="font-medium text-atmos-onSurface">Aracaju, Sergipe, BR</span>
-      — ex.:
-      <span class="font-medium text-atmos-onSurface">Curitiba, BR</span>
-    </p>
   </form>
 </template>

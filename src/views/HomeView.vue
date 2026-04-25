@@ -27,28 +27,7 @@ onMounted(() => {
   <div class="relative min-h-screen overflow-x-hidden text-atmos-onBackground">
     <DsAmbientBackground :variant="current?.ambientKind ?? 'default'" />
 
-    <DsTopAppBar brand="Atmos">
-      <template #nav>
-        <button
-          type="button"
-          class="font-semibold text-atmos-primary transition hover:text-atmos-primary-container"
-        >
-          Início
-        </button>
-        <button
-          type="button"
-          class="text-white/70 transition hover:text-white"
-        >
-          Previsão
-        </button>
-        <button
-          type="button"
-          class="text-white/70 transition hover:text-white"
-        >
-          Radar
-        </button>
-      </template>
-    </DsTopAppBar>
+    <DsTopAppBar brand="Atmos" />
 
     <main
       class="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col items-center px-atmos-container-margin pb-40 pt-28 md:pt-32"
@@ -86,7 +65,7 @@ onMounted(() => {
 
       <template v-if="current">
         <div
-          class="mt-atmos-xl flex w-full max-w-5xl flex-col items-center"
+          class="flex w-full max-w-5xl flex-col items-center"
         >
           <WeatherHeroSection :weather="current" />
           <WeatherBentoMetrics :weather="current" />
